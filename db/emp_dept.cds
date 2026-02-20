@@ -5,6 +5,7 @@ namespace comp.hr;
 entity Employees : cuid {
    code : String(10);
    name : String(200);
+   check: String;
    // association element
    department : Association to one Departments;
 }
