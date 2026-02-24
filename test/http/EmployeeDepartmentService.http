@@ -1,0 +1,94 @@
+@server=http://localhost:4004
+@username=alice
+@password=
+
+
+### Employees
+# @name Employees_GET
+GET {{server}}/odata/v4/employee-department/Employees
+Authorization: Basic {{username}}:{{password}}
+
+
+### Employees
+# @name Employees_POST
+POST {{server}}/odata/v4/employee-department/Employees
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": "12013156-9ae0-4360-bb1c-75aec28905e8",
+  "code": "e-12013156",
+  "name": "name-12013156",
+  "department": {
+    "ID": "2796911e-bddf-42ce-9e6f-2b056214a97e"
+  }
+}
+
+
+### Employees
+# @name Employees_PATCH
+PATCH {{server}}/odata/v4/employee-department/Employees/12013156-9ae0-4360-bb1c-75aec28905e8
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": "12013156-9ae0-4360-bb1c-75aec28905e8",
+  "code": "e-12013156",
+  "name": "name-12013156",
+  "department": {
+    "ID": "2796911e-bddf-42ce-9e6f-2b056214a97e"
+  }
+}
+
+
+### Employees
+# @name Employees_DELETE
+DELETE {{server}}/odata/v4/employee-department/Employees/12013156-9ae0-4360-bb1c-75aec28905e8
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+
+### Departments
+# @name Departments_GET
+GET {{server}}/odata/v4/employee-department/Departments
+Authorization: Basic {{username}}:{{password}}
+
+
+### Departments
+# @name Departments_POST
+POST {{server}}/odata/v4/employee-department/Departments
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": "2796911e-bddf-42ce-9e6f-2b056214a97e",
+  "code": "de-2796911",
+  "name": "name-2796911"
+}
+
+
+### Departments
+# @name Departments_PATCH
+PATCH {{server}}/odata/v4/employee-department/Departments/2796911e-bddf-42ce-9e6f-2b056214a97e
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": "2796911e-bddf-42ce-9e6f-2b056214a97e",
+  "code": "de-2796911",
+  "name": "name-2796911"
+}
+
+
+### Departments
+# @name Departments_DELETE
+DELETE {{server}}/odata/v4/employee-department/Departments/2796911e-bddf-42ce-9e6f-2b056214a97e
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+
+### How Students to Course expand
+GET {{server}}/odata/v4/student-courses/Students?$expand=courses($expand=course)
+
+### From Courses to Student
+GET {{server}}/odata/v4/student-courses/Courses?$expand=students($expand=student)

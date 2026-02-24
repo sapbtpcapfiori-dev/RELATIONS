@@ -1,0 +1,126 @@
+@server=http://localhost:4004
+@username=alice
+@password=
+
+
+### Students
+# @name Students_GET
+GET {{server}}/odata/v4/student-courses/Students
+Authorization: Basic {{username}}:{{password}}
+
+
+### Students
+# @name Students_POST
+POST {{server}}/odata/v4/student-courses/Students
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": "9927343d-96bf-4b76-8af8-44d563514939",
+  "studentid": "udentid-9927343",
+  "name": "name-9927343"
+}
+
+
+### Students
+# @name Students_PATCH
+PATCH {{server}}/odata/v4/student-courses/Students/9927343d-96bf-4b76-8af8-44d563514939
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": "9927343d-96bf-4b76-8af8-44d563514939",
+  "studentid": "udentid-9927343",
+  "name": "name-9927343"
+}
+
+
+### Students
+# @name Students_DELETE
+DELETE {{server}}/odata/v4/student-courses/Students/9927343d-96bf-4b76-8af8-44d563514939
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+
+### StudentsCourses
+# @name StudentsCourses_GET
+GET {{server}}/odata/v4/student-courses/StudentsCourses
+Authorization: Basic {{username}}:{{password}}
+
+
+### StudentsCourses
+# @name StudentsCourses_POST
+POST {{server}}/odata/v4/student-courses/StudentsCourses
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "student": {
+    "ID": "9927343d-96bf-4b76-8af8-44d563514939"
+  },
+  "course": {
+    "ID": "17662330-d8fc-4092-8139-4f49c55c1e4b"
+  }
+}
+
+
+### StudentsCourses
+# @name StudentsCourses_PATCH
+PATCH {{server}}/odata/v4/student-courses/StudentsCourses/undefined
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "student": {
+    "ID": "9927343d-96bf-4b76-8af8-44d563514939"
+  },
+  "course": {
+    "ID": "17662330-d8fc-4092-8139-4f49c55c1e4b"
+  }
+}
+
+
+### StudentsCourses
+# @name StudentsCourses_DELETE
+DELETE {{server}}/odata/v4/student-courses/StudentsCourses/undefined
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+
+### Courses
+# @name Courses_GET
+GET {{server}}/odata/v4/student-courses/Courses
+Authorization: Basic {{username}}:{{password}}
+
+
+### Courses
+# @name Courses_POST
+POST {{server}}/odata/v4/student-courses/Courses
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": "17662330-d8fc-4092-8139-4f49c55c1e4b",
+  "courseCode": "e-17662330",
+  "title": "title-17662330"
+}
+
+
+### Courses
+# @name Courses_PATCH
+PATCH {{server}}/odata/v4/student-courses/Courses/17662330-d8fc-4092-8139-4f49c55c1e4b
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": "17662330-d8fc-4092-8139-4f49c55c1e4b",
+  "courseCode": "e-17662330",
+  "title": "title-17662330"
+}
+
+
+### Courses
+# @name Courses_DELETE
+DELETE {{server}}/odata/v4/student-courses/Courses/17662330-d8fc-4092-8139-4f49c55c1e4b
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
